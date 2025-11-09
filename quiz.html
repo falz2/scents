@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fragrance Quiz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8f0;
+      color: #4b2e2e;
+      padding: 30px;
+    }
+    h1 {
+      color: #b85c38;
+    }
+    button {
+      background-color: #b85c38;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .quiz {
+      display: none;
+      margin-top: 20px;
+    }
+    .question {
+      margin-bottom: 20px;
+      background: #fff0e6;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to the Fragrance Quiz</h1>
+  <button id="startQuizBtn">Start Quiz</button>
+
+  <div class="quiz" id="quizContainer">
+    <div class="question">
+      <p>1. Which note is commonly found in fresh, citrusy perfumes?</p>
+      <input type="radio" name="q1" value="0"> Vanilla<br>
+      <input type="radio" name="q1" value="1"> Lemon<br>
+      <input type="radio" name="q1" value="2"> Sandalwood<br>
+      <input type="radio" name="q1" value="3"> Amber<br>
+    </div>
+    <div class="question">
+      <p>2. What is the term for the scent that lingers after a few hours?</p>
+      <input type="radio" name="q2" value="0"> Top note<br>
+      <input type="radio" name="q2" value="1"> Heart note<br>
+      <input type="radio" name="q2" value="2"> Base note<br>
+      <input type="radio" name="q2" value="3"> Middle note<br>
+    </div>
+    <div class="question">
+      <p>3. Which fragrance family includes scents like lavender and rosemary?</p>
+      <input type="radio" name="q3" value="0"> Oriental<br>
+      <input type="radio" name="q3" value="1"> Woody<br>
+      <input type="radio" name="q3" value="2"> Aromatic<br>
+      <input type="radio" name="q3" value="3"> Floral<br>
+    </div>
+    <button onclick="submitQuiz()">Submit Answers</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    document.getElementById("startQuizBtn").addEventListener("click", function() {
+      document.getElementById("quizContainer").style.display = "block";
+      this.style.display = "none";
+    });
+
+    function submitQuiz() {
+      const answers = [1, 2, 2]; // Correct answers
+      let score = 0;
+      for (let i = 1; i <= answers.length; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selected) {
+          if (parseInt(selected.value) === answers[i - 1]) {
+            score++;
+          }
+        }
+      }
+      const resultText = `You scored ${score} out of ${answers.length}. ${score === answers.length ? "Excellent nose!" : score >= 2 ? "Nice job!" : "Keep sniffing!"}`;
+      document.getElementById("result").textContent = resultText;
+    }
+  </script>
+
+</body>
+</html>

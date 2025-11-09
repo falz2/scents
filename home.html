@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YVONNE SCENTS | Uganda's Signature Perfumes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>YVONNE SCENTS</h1>
+    <p>Awaken Your Senses – Discover Uganda’s Signature Scents</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#shop">Shop</a>
+      <a href="#guide">Fragrance Guide</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Crafted for Ugandan elegance, worn by the world.</h2>
+    <button onclick="scrollToShop()">Shop Now</button>
+  </section>
+
+  <section id="about">
+    <h2>About Yvonne Scents</h2>
+    <p>Born in the heart of Uganda, Yvonne Scents is a celebration of elegance, authenticity, and the power of fragrance to tell your story.</p>
+  </section>
+
+  <section id="shop">
+    <h2>Our Collection</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="perfume1.jpg" alt="Floral Bliss" />
+        <h3>Floral Bliss</h3>
+        <p>UGX 85,000</p>
+        <button onclick="addToCart('Floral Bliss', 85000)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="perfume2.jpg" alt="Royal Oud" />
+        <h3>Royal Oud</h3>
+        <p>UGX 120,000</p>
+       <button onclick="addToCart('Royal Oud', 120000)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+  <section id="cart">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <p id="cart-total">Total: UGX 0</p>
+</section>
+
+  <section id="guide">
+    <h2>Find Your Signature Scent</h2>
+    <p>Take our quiz and discover the perfect fragrance for your personality and lifestyle.</p>
+    <a href="quiz.html">
+   <button id="fragranceQuizBtn">Start Quiz</button>
+</a>
+
+  </section>
+
+  <footer id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Kampala, Uganda</p>
+    <p>📞 +256759442004</p>
+    <p>📧 info@yvonnescents.ug</p>
+    <p>Follow us on Instagram & Facebook @YvonneScents</p>
+    <a href="https://wa.me/256759442004" target="_blank">
+  <button>Chat with Us on WhatsApp</button>
+</a>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
